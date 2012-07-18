@@ -1,0 +1,8 @@
+noremap h gT
+noremap l gt
+noremap H h
+noremap L l
+noremap <C-p> :back<Return>
+noremap <C-n> :forward<Return>
+noremap j 5j
+noremap k 5k

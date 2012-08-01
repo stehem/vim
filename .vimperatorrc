@@ -6,3 +6,4 @@ noremap <C-p> :back<Return>
 noremap <C-n> :forward<Return>
 noremap j 5j
 noremap k 5k
+

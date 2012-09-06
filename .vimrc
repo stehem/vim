@@ -5,12 +5,11 @@
 " powerline : https://github.com/Lokaltog/vim-powerline/
 " solarized : https://github.com/altercation/vim-colors-solarized/
 
-set guioptions-=rl
 call pathogen#infect()
-syntax on
 filetype plugin indent on
-
-set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
+syntax enable
+set background=dark
+colorscheme solarized
 
 let g:Powerline_symbols = 'unicode'
 set nocompatible " Disable vi-compatibility
@@ -21,5 +20,12 @@ set encoding=utf-8 " Necessary to show unicode glyphs
 :set shiftwidth=2
 :set expandtab
 
-set background=dark
-colorscheme solarized
+" Remove menu bar
+set guioptions-=m
+
+" Remove toolbar
+set guioptions-=T
+
+nmap <C-V> "+gP
+imap <C-V> <ESC><C-V>i
+vmap <C-C> "+y 

@@ -4,6 +4,8 @@
 " delimitmate : https://github.com/Raimondi/delimitMate/
 " powerline : https://github.com/Lokaltog/vim-powerline/
 " solarized : https://github.com/altercation/vim-colors-solarized/
+" vimgutter : https://github.com/airblade/vim-gitgutter
+
 
 call pathogen#infect()
 filetype plugin indent on
@@ -31,3 +33,6 @@ imap <C-V> <ESC><C-V>i
 vmap <C-C> "+y 
 
 :set noswapfile
+map <C-T> :tabnew<CR>
+
+au VimEnter * highlight clear SignColumn

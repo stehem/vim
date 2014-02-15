@@ -1,38 +1,38 @@
-" plugins
-" pathogen : https://github.com/tpope/vim-pathogen/
-" ctrlp : https://github.com/kien/ctrlp.vim/
-" delimitmate : https://github.com/Raimondi/delimitMate/
-" powerline : https://github.com/Lokaltog/vim-powerline/
-" solarized : https://github.com/altercation/vim-colors-solarized/
-" vimgutter : https://github.com/airblade/vim-gitgutter
-
-
-call pathogen#infect()
-filetype plugin indent on
-syntax enable
-set background=dark
-colorscheme solarized
-
-let g:Powerline_symbols = 'unicode'
-set nocompatible " Disable vi-compatibility
-set laststatus=2 " Always show the statusline
-set encoding=utf-8 " Necessary to show unicode glyphs
+" https://github.com/sigurdga/gnome-terminal-colors-solarized
 
 :set tabstop=2
 :set shiftwidth=2
 :set expandtab
-
-" Remove menu bar
-set guioptions-=m
-
-" Remove toolbar
-set guioptions-=T
-
-nmap <C-V> "+gP
-imap <C-V> <ESC><C-V>i
-vmap <C-C> "+y 
-
 :set noswapfile
 map <C-T> :tabnew<CR>
 
-au VimEnter * highlight clear SignColumn
+set nocompatible              " be iMproved
+filetype off                  " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" original repos on GitHub
+Bundle 'tpope/vim-fugitive'
+Bundle 'kien/ctrlp.vim'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'tpope/vim-fireplace'
+Bundle 'tpope/vim-classpath.git'
+Bundle 'guns/vim-clojure-static.git'
+Bundle 'kien/rainbow_parentheses.vim'
+
+
+
+filetype plugin indent on     " required!
+
+" NOTE: comments after Bundle commands are not allowed.
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
